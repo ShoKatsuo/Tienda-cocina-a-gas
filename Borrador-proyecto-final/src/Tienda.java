@@ -109,6 +109,7 @@ public class Tienda extends JFrame {
 				ConsultarCocina consulta = new ConsultarCocina();
 				consulta.setVisible(true);
 			}
+			
 		});
 		mnNewMenu_1.add(mntmNewMenuItem_1);
 		
@@ -122,6 +123,12 @@ public class Tienda extends JFrame {
 		mnNewMenu_1.add(mntmNewMenuItem_2);
 		
 		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Listar Cocinas");
+		mntmNewMenuItem_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ListarCocinas lista = new ListarCocinas();
+				lista.setVisible(true);
+			}
+		});
 		mnNewMenu_1.add(mntmNewMenuItem_3);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

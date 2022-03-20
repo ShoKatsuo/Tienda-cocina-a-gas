@@ -185,52 +185,51 @@ public class ModificarCocina extends JDialog {
 			btnCerrar.setBounds(270, 30, 85, 21);
 			contentPanel.add(btnCerrar);
 		}
+		
+		txtPrecio.setText(String.valueOf(Tienda.precio0));
+		txtAncho.setText(String.valueOf(Tienda.ancho0));
+		txtAlto.setText(String.valueOf(Tienda.ancho0));
+		txtFondo.setText(String.valueOf(Tienda.fondo0));
+		txtQuemadores.setText(String.valueOf(Tienda.quemadores0));
+		
 		{
 			JButton btnGrabar = new JButton("Grabar");
 			btnGrabar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					//Declaración de variables
-					double PrecioNuevo, AnchoNuevo, AltoNuevo, FondoNuevo;
-					int QuemadoresNuevo, Modelo;
+					int Modelo;
 					Modelo=0;
-					//Introducción de variables
-					PrecioNuevo = Double.parseDouble(txtPrecio.getText());
-					AnchoNuevo = Double.parseDouble(txtAncho.getText());
-					AltoNuevo = Double.parseDouble(txtAlto.getText());
-					FondoNuevo = Double.parseDouble(txtFondo.getText());
-					QuemadoresNuevo = Integer.parseInt(txtQuemadores.getText());
 					//Seleccionador
 					switch(Modelo) {
 						case 0:
-							Tienda.precio0=PrecioNuevo;
-							Tienda.ancho0=AnchoNuevo;
-							Tienda.alto0=AltoNuevo;
-							Tienda.fondo0=FondoNuevo;
-							Tienda.quemadores0=QuemadoresNuevo;
+							Tienda.precio0=Double.parseDouble(txtPrecio.getText());
+							Tienda.ancho0=Double.parseDouble(txtAncho.getText());
+							Tienda.alto0=Double.parseDouble(txtAlto.getText());
+							Tienda.fondo0=Double.parseDouble(txtFondo.getText());
+							Tienda.quemadores0=Integer.parseInt(txtQuemadores.getText());
 						case 1:
-							Tienda.precio1=PrecioNuevo;
-							Tienda.ancho1=AnchoNuevo;
-							Tienda.alto1=AltoNuevo;
-							Tienda.fondo1=FondoNuevo;
-							Tienda.quemadores1=QuemadoresNuevo;
+							Tienda.precio1=Double.parseDouble(txtPrecio.getText());
+							Tienda.ancho1=Double.parseDouble(txtAncho.getText());
+							Tienda.alto1=Double.parseDouble(txtAlto.getText());
+							Tienda.fondo1=Double.parseDouble(txtFondo.getText());
+							Tienda.quemadores1=Integer.parseInt(txtQuemadores.getText());
 						case 2:
-							Tienda.precio2=PrecioNuevo;
-							Tienda.ancho2=AnchoNuevo;
-							Tienda.alto2=AltoNuevo;
-							Tienda.fondo2=FondoNuevo;
-							Tienda.quemadores2=QuemadoresNuevo;
+							Tienda.precio2=Double.parseDouble(txtPrecio.getText());
+							Tienda.ancho2=Double.parseDouble(txtAncho.getText());
+							Tienda.alto2=Double.parseDouble(txtAlto.getText());
+							Tienda.fondo2=Double.parseDouble(txtFondo.getText());
+							Tienda.quemadores2=Integer.parseInt(txtQuemadores.getText());
 						case 3:
-							Tienda.precio3=PrecioNuevo;
-							Tienda.ancho3=AnchoNuevo;
-							Tienda.alto3=AltoNuevo;
-							Tienda.fondo3=FondoNuevo;
-							Tienda.quemadores3=QuemadoresNuevo;	
+							Tienda.precio3=Double.parseDouble(txtPrecio.getText());
+							Tienda.ancho3=Double.parseDouble(txtAncho.getText());
+							Tienda.alto3=Double.parseDouble(txtAlto.getText());
+							Tienda.fondo3=Double.parseDouble(txtFondo.getText());
+							Tienda.quemadores3=Integer.parseInt(txtQuemadores.getText());
 						case 4:
-							Tienda.precio4=PrecioNuevo;
-							Tienda.ancho4=AnchoNuevo;
-							Tienda.alto4=AltoNuevo;
-							Tienda.fondo4=FondoNuevo;
-							Tienda.quemadores4=QuemadoresNuevo;
+							Tienda.precio4=Double.parseDouble(txtPrecio.getText());
+							Tienda.ancho4=Double.parseDouble(txtAncho.getText());
+							Tienda.alto4=Double.parseDouble(txtAlto.getText());
+							Tienda.fondo4=Double.parseDouble(txtFondo.getText());
+							Tienda.quemadores4=Integer.parseInt(txtQuemadores.getText());
 					}
 					dispose();
 					

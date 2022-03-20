@@ -41,6 +41,7 @@ public class ConsultarCocina extends JDialog {
 	 * Create the dialog.
 	 */
 	public ConsultarCocina() {
+		
 		setModal(true);
 		setResizable(false);
 		setTitle("Consultar cocina");
@@ -73,11 +74,6 @@ public class ConsultarCocina extends JDialog {
 		JLabel lblNewLabel_5 = new JLabel("Quemadores");
 		lblNewLabel_5.setBounds(27, 146, 79, 13);
 		contentPanel.add(lblNewLabel_5);
-		
-		JTextArea txtS = new JTextArea();
-		txtS.setEditable(false);
-		txtS.setBounds(286, 54, 129, 133);
-		contentPanel.add(txtS);
 		
 		JComboBox cboModelo = new JComboBox();
 		cboModelo.addActionListener(new ActionListener() {
@@ -149,7 +145,6 @@ public class ConsultarCocina extends JDialog {
 				txtAlto.setText(String.valueOf(consulAlto));
 				txtFondo.setText(String.valueOf(consulFondo));
 				txtQuemadores.setText(String.valueOf(consulQuemadores));
-				txtS.setText(String.valueOf(indexModelo));
 				
 			}
 		});
@@ -192,6 +187,12 @@ public class ConsultarCocina extends JDialog {
 		txtQuemadores.setBounds(116, 143, 160, 19);
 		contentPanel.add(txtQuemadores);
 		txtQuemadores.setColumns(10);
+		
+		txtPrecio.setText(String.valueOf(Tienda.precio0));
+		txtAncho.setText(String.valueOf(Tienda.ancho0));
+		txtAlto.setText(String.valueOf(Tienda.ancho0));
+		txtFondo.setText(String.valueOf(Tienda.fondo0));
+		txtQuemadores.setText(String.valueOf(Tienda.quemadores0));
 		
 		JButton btnCerrar = new JButton("Cerrar");
 		btnCerrar.setBounds(330, 27, 85, 21);
