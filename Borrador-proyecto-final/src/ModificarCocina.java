@@ -81,7 +81,7 @@ public class ModificarCocina extends JDialog {
 					setTextAreaInfo();
 				}
 				void setTextAreaInfo(){
-					//Definir variables
+					//Definir variable
 					int indexModelo, consulQuemadores;
 					double consulPrecio, consulAncho, consulAlto, consulFondo;
 					indexModelo=cboModelo.getSelectedIndex();
