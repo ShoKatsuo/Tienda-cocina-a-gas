@@ -1,7 +1,5 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
@@ -17,7 +15,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.DefaultComboBoxModel;
 
-public class Vender extends JFrame {
+public class Vender extends JInternalFrame {
 	
 	double precio, imp_compra, imp_pagar, imp_descuento, descuento;
 	String obsequio, modelo;
@@ -58,27 +56,7 @@ public class Vender extends JFrame {
 	private JTextField txtPrecio;
 	private JTextField txtCantidad;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Vender frame = new Vender();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public Vender() {
-		setLocationByPlatform(true);
 		setFont(new Font("Roboto", Font.PLAIN, 12));
 		setTitle("Vender");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -227,5 +205,6 @@ public class Vender extends JFrame {
 		btnClose.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnClose.setBounds(308, 69, 89, 23);
 		contentPane.add(btnClose);
+		setVisible(true);
 	}
 }

@@ -3,34 +3,19 @@ import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class ConfigurarObsequios extends JDialog {
+public class ConfigurarObsequios extends JInternalFrame {
 
 	private final JPanel contentPanel = new JPanel();
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		try {
-			ConfigurarObsequios dialog = new ConfigurarObsequios();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
-	 * Create the dialog.
-	 */
 	public ConfigurarObsequios() {
 		setBounds(100, 100, 381, 169);
 		getContentPane().setLayout(new BorderLayout());
@@ -82,6 +67,7 @@ public class ConfigurarObsequios extends JDialog {
 			textField_2.setBounds(149, 73, 86, 20);
 			contentPanel.add(textField_2);
 			textField_2.setColumns(10);
+			setVisible(true);
 		}
 	}
 

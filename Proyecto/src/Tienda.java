@@ -1,17 +1,26 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
 
+import javax.swing.DefaultDesktopManager;
+import javax.swing.DesktopManager;
+import javax.swing.JComponent;
+import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class Tienda extends JFrame {
-	
+
 	// Datos mínimos de la primera cocina
 	public static String modelo0 = "Mabe EMP6120PG0";
 	public static double precio0 = 949.0;
@@ -20,7 +29,7 @@ public class Tienda extends JFrame {
 	public static double alto0 = 91.0;
 	public static int quemadores0 = 4;
 	// Datos mínimos de la segunda cocina
-	public static String modelo1 = "Indurama Parma";		
+	public static String modelo1 = "Indurama Parma";
 	public static double precio1 = 1089.0;
 	public static double ancho1 = 80.0;
 	public static double alto1 = 94.0;
@@ -63,15 +72,13 @@ public class Tienda extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
+
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					UIManager.setLookAndFeel("de.javasoft.plaf.synthetica.SyntheticaBlackStarLookAndFeel");
 					Tienda frame = new Tienda();
-					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -79,61 +86,68 @@ public class Tienda extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public Tienda() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setBounds(100, 100, 762, 475);
-		
+		JDesktopPane dskPane = new JDesktopPane();
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
-		
 		JMenu mnNewMenu = new JMenu("Archivo");
+		mnNewMenu.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		menuBar.add(mnNewMenu);
-		
+
 		JMenuItem mntmNewMenuItem = new JMenuItem("Salir");
+		mntmNewMenuItem.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
 		});
 		mnNewMenu.add(mntmNewMenuItem);
-		
+
 		JMenu mnNewMenu_1 = new JMenu("Mantenimiento");
+		mnNewMenu_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		menuBar.add(mnNewMenu_1);
-		
+
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Consultar Cocina");
+		mntmNewMenuItem_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ConsultarCocina consulta = new ConsultarCocina();
-				consulta.setVisible(true);
+				dskPane.add(consulta);
 			}
-			
+
 		});
 		mnNewMenu_1.add(mntmNewMenuItem_1);
-		
+
 		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Modificar Cocina");
+		mntmNewMenuItem_2.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		mntmNewMenuItem_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ModificarCocina modificar = new ModificarCocina();
-				modificar.setVisible(true);
+				dskPane.add(modificar);
 			}
 		});
 		mnNewMenu_1.add(mntmNewMenuItem_2);
-		
+
 		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Listar Cocinas");
+		mntmNewMenuItem_3.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		mntmNewMenuItem_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ListarCocinas lista = new ListarCocinas();
-				lista.setVisible(true);
+				dskPane.add(lista);
 			}
 		});
 		mnNewMenu_1.add(mntmNewMenuItem_3);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
+
+		contentPane.add(dskPane, BorderLayout.CENTER);
+
 		setContentPane(contentPane);
+		setVisible(true);
 	}
 
 }

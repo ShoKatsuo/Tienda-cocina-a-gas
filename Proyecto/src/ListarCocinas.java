@@ -1,108 +1,111 @@
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-
 import javax.swing.JButton;
-import javax.swing.JDialog;
+import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JTextPane;
-import javax.swing.JScrollBar;
 import javax.swing.JTextArea;
+import javax.swing.JTextPane;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.ScrollPane;
 import javax.swing.JScrollPane;
+import java.awt.Font;
 
-public class ListarCocinas extends JDialog {
+public class ListarCocinas extends JInternalFrame {
 
 	private final JPanel contentPanel = new JPanel();
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		try {
-			ListarCocinas dialog = new ListarCocinas();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
-	 * Create the dialog.
-	 */
 	public ListarCocinas() {
+		setVisible(true);
 		setTitle("Listar Cocinas");
-		setBounds(100, 100, 576, 367);
+		setBounds(100, 100, 600, 659);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
-		
+
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 10, 489, 247);
+		scrollPane.setBounds(10, 10, 568, 545);
 		contentPanel.add(scrollPane);
-		
-		JTextArea txtS = new JTextArea();
+
+		JTextPane txtS = new JTextPane();
+		txtS.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		scrollPane.setViewportView(txtS);
-		
-		JButton btnCerrar = new JButton("Cerrar");
+
+		JButton btnCerrar = new JButton("CERRAR");
+		btnCerrar.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnCerrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
 		});
-		btnCerrar.setBounds(282, 282, 85, 21);
+		btnCerrar.setBounds(442, 565, 136, 44);
 		contentPanel.add(btnCerrar);
-		
-		JButton btnListar = new JButton("Listar");
+
+		JButton btnListar = new JButton("LISTAR");
+		btnListar.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnListar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				txtS.setText(null);
 				Listar();
 			}
-			void Listar() {
-				//Mostrar la lista
-				txtS.setText("LISTADO DE COCINAS"+"\n\n");
-				txtS.append("Modelo\t: "+Tienda.modelo0+"\n");
-				txtS.append("Precio\t: S/"+Tienda.precio0+"\n");
-				txtS.append("Profundidad\t: "+Tienda.fondo0+" cm\n");
-				txtS.append("Ancho\t: "+Tienda.ancho0+" cm\n");
-				txtS.append("Alto\t: "+Tienda.alto0+" cm\n");
-				txtS.append("Quemadores\t: "+Tienda.quemadores0+"\n\n");
 
-				txtS.append("Modelo\t: "+Tienda.modelo1+"\n");
-				txtS.append("Precio\t: S/"+Tienda.precio1+"\n");
-				txtS.append("Profundidad\t: "+Tienda.fondo1+" cm\n");
-				txtS.append("Ancho\t: "+Tienda.ancho1+" cm\n");
-				txtS.append("Alto\t: "+Tienda.alto1+" cm\n");
-				txtS.append("Quemadores\t: "+Tienda.quemadores1+"\n\n");
-				
-				txtS.append("Modelo\t: "+Tienda.modelo2+"\n");
-				txtS.append("Precio\t: S/"+Tienda.precio2+"\n");
-				txtS.append("Profundidad\t: "+Tienda.fondo2+" cm\n");
-				txtS.append("Ancho\t: "+Tienda.ancho2+" cm\n");
-				txtS.append("Alto\t: "+Tienda.alto2+" cm\n");
-				txtS.append("Quemadores\t: "+Tienda.quemadores2+"\n\n");
-				
-				txtS.append("Modelo\t: "+Tienda.modelo3+"\n");
-				txtS.append("Precio\t: S/"+Tienda.precio3+"\n");
-				txtS.append("Profundidad\t: "+Tienda.fondo3+" cm\n");
-				txtS.append("Ancho\t: "+Tienda.ancho3+" cm\n");
-				txtS.append("Alto\t: "+Tienda.alto3+" cm\n");
-				txtS.append("Quemadores\t: "+Tienda.quemadores3+"\n\n");
-				
-				txtS.append("Modelo\t: "+Tienda.modelo4+"\n");
-				txtS.append("Precio\t: S/"+Tienda.precio4+"\n");
-				txtS.append("Profundidad\t: "+Tienda.fondo4+" cm\n");
-				txtS.append("Ancho\t: "+Tienda.ancho4+" cm\n");
-				txtS.append("Alto\t: "+Tienda.alto4+" cm\n");
-				txtS.append("Quemadores\t: "+Tienda.quemadores4+"\n\n");
+			void Listar() {
+				// Mostrar la lista
+				String lista = "";
+
+				lista += "<h1 style='text-decoration:underline'><center>LISTADO DE COCINAS</center></h1>" + "<br/>";
+				lista += "<br/>";
+
+				lista += "Modelo\t: " + Tienda.modelo0 + "<br/>";
+				lista += "Precio\t: S/" + Tienda.precio0 + "<br/>";
+				lista += "Profundidad\t: " + Tienda.fondo0 + "<br/>";
+				lista += "Ancho\t: " + Tienda.ancho0 + "<br/>";
+				lista += "Alto\t: " + Tienda.alto0 + "<br/>";
+				lista += "Quemadores\t: " + Tienda.quemadores0 + "<br/>";
+
+				lista += "<hr/>";
+
+				lista += "Modelo\t: " + Tienda.modelo1 + "<br/>";
+				lista += "Precio\t: S/" + Tienda.precio1 + "<br/>";
+				lista += "Profundidad\t: " + Tienda.fondo1 + "<br/>";
+				lista += "Ancho\t: " + Tienda.ancho1 + "<br/>";
+				lista += "Alto\t: " + Tienda.alto1 + "<br/>";
+				lista += "Quemadores\t: " + Tienda.quemadores1 + "<br/>";
+
+				lista += "<hr/>";
+
+				lista += "Modelo\t: " + Tienda.modelo2 + "<br/>";
+				lista += "Precio\t: S/" + Tienda.precio2 + "<br/>";
+				lista += "Profundidad\t: " + Tienda.fondo2 + "<br/>";
+				lista += "Ancho\t: " + Tienda.ancho2 + "<br/>";
+				lista += "Alto\t: " + Tienda.alto2 + "<br/>";
+				lista += "Quemadores\t: " + Tienda.quemadores2 + "<br/>";
+
+				lista += "<hr/>";
+
+				lista += "Modelo\t: " + Tienda.modelo3 + "<br/>";
+				lista += "Precio\t: S/" + Tienda.precio3 + "<br/>";
+				lista += "Profundidad\t: " + Tienda.fondo3 + "<br/>";
+				lista += "Ancho\t: " + Tienda.ancho3 + "<br/>";
+				lista += "Alto\t: " + Tienda.alto3 + "<br/>";
+				lista += "Quemadores\t: " + Tienda.quemadores3 + "<br/>";
+
+				lista += "<hr/>";
+
+				lista += "Modelo\t: " + Tienda.modelo4 + "<br/>";
+				lista += "Precio\t: S/" + Tienda.precio4 + "<br/>";
+				lista += "Profundidad\t: " + Tienda.fondo4 + "<br/>";
+				lista += "Ancho\t: " + Tienda.ancho4 + "<br/>";
+				lista += "Alto\t: " + Tienda.alto4 + "<br/>";
+				lista += "Quemadores\t: " + Tienda.quemadores4 + "<br/>";
+
+				txtS.setContentType("text/html");
+				txtS.setText(lista);
 			}
 		});
-		btnListar.setBounds(187, 282, 85, 21);
+		btnListar.setBounds(291, 565, 136, 44);
 		contentPanel.add(btnListar);
+		setVisible(true);
 	}
 }
