@@ -195,33 +195,35 @@ public class Tienda extends JFrame {
 		mniConfigurarObsequios.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		mnNewMenu_2.add(mniConfigurarObsequios);
 		
-		JMenuItem mntmNewMenuItem_6 = new JMenuItem(" Configurar cantidad \u00F3ptima");
-		mntmNewMenuItem_6.addActionListener(new ActionListener() {
+		JMenuItem mniConfigurarcantidadoptima = new JMenuItem(" Configurar cantidad \u00F3ptima");
+		mniConfigurarcantidadoptima.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Configurar cc = new Configurar ();
+				dskPane.add(cc);
 			}
 		});
-		mntmNewMenuItem_6.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		mnNewMenu_2.add(mntmNewMenuItem_6);
+		mniConfigurarcantidadoptima.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		mnNewMenu_2.add(mniConfigurarcantidadoptima);
 		
-		JMenuItem mntmNewMenuItem_7 = new JMenuItem(" Configurar cuota diaria");
-		mntmNewMenuItem_7.addActionListener(new ActionListener() {
+		JMenuItem mniConfigurarcuotad = new JMenuItem(" Configurar cuota diaria");
+		mniConfigurarcuotad.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		mntmNewMenuItem_7.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		mnNewMenu_2.add(mntmNewMenuItem_7);
+		mniConfigurarcuotad.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		mnNewMenu_2.add(mniConfigurarcuotad);
 		
 		JMenu mnNewMenu_3 = new JMenu("Ayuda");
 		mnNewMenu_3.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		menuBar.add(mnNewMenu_3);
 		
-		JMenuItem mntmNewMenuItem_8 = new JMenuItem(" Acerca de Tienda");
-		mntmNewMenuItem_8.addActionListener(new ActionListener() {
+		JMenuItem mniAcercadetienda = new JMenuItem(" Acerca de Tienda");
+		mniAcercadetienda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		mntmNewMenuItem_8.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		mnNewMenu_3.add(mntmNewMenuItem_8);
+		mniAcercadetienda.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		mnNewMenu_3.add(mniAcercadetienda);
 				
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
