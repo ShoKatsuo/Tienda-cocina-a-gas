@@ -28,6 +28,7 @@ public class Tienda extends JFrame {
 	public static double ancho0 = 60.0;
 	public static double alto0 = 91.0;
 	public static int quemadores0 = 4;
+	public static String imagen0 = "img/mabe_emp6120.jpg";
 	// Datos mínimos de la segunda cocina
 	public static String modelo1 = "Indurama Parma";
 	public static double precio1 = 1089.0;
@@ -35,6 +36,7 @@ public class Tienda extends JFrame {
 	public static double alto1 = 94.0;
 	public static double fondo1 = 67.5;
 	public static int quemadores1 = 6;
+	public static String imagen1 = "img/indurama_parma.jpg";
 	// Datos mínimos de la tercera cocina
 	public static String modelo2 = "Sole COSOL027";
 	public static double precio2 = 850.0;
@@ -42,6 +44,7 @@ public class Tienda extends JFrame {
 	public static double alto2 = 90.0;
 	public static double fondo2 = 50.0;
 	public static int quemadores2 = 4;
+	public static String imagen2 = "img/sole_cosol.jpg";
 	// Datos mínimos de la cuarta cocina
 	public static String modelo3 = "Coldex CX602";
 	public static double precio3 = 629.0;
@@ -49,6 +52,7 @@ public class Tienda extends JFrame {
 	public static double alto3 = 95.0;
 	public static double fondo3 = 51.5;
 	public static int quemadores3 = 5;
+	public static String imagen3 = "img/coldex_cx602.jpg";
 	// Datos mínimos de la quinta cocina
 	public static String modelo4 = "Reco Dakota";
 	public static double precio4 = 849.0;
@@ -56,6 +60,7 @@ public class Tienda extends JFrame {
 	public static double alto4 = 94.5;
 	public static double fondo4 = 66.0;
 	public static int quemadores4 = 5;
+	public static String imagen4 = "img/recco_dakota.jpg";
 	// Porcentajes de descuento
 	public static double porcentaje1 = 7.5;
 	public static double porcentaje2 = 10.0;
@@ -140,6 +145,32 @@ public class Tienda extends JFrame {
 			}
 		});
 		mnNewMenu_1.add(mntmNewMenuItem_3);
+		
+		//OBAUTE
+		JMenu mnVenta = new JMenu("Ventas");
+		mnVenta.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		menuBar.add(mnVenta);
+		
+		JMenuItem mniVender = new JMenuItem("Venta Directa");
+		mniVender.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		mniVender.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Vender v = new Vender();
+				dskPane.add(v);
+			}
+		});
+		mnVenta.add(mniVender);
+	
+		JMenuItem mniGenerarReporte = new JMenuItem("Generar Reporte");
+		mniGenerarReporte.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		mniGenerarReporte.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GenerarReporte gr = new GenerarReporte();
+				dskPane.add(gr);
+			}
+		});
+		mnVenta.add(mniGenerarReporte);
+				
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
