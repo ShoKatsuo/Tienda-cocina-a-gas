@@ -70,29 +70,31 @@ public class ConfigurarDescuentos extends JInternalFrame {
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int Unoacinco;
 				
-				Unoacinco = Integer.parseInt(txtUnoacinco.getText());
-				
-				switch (Unoacinco) {
-				case 0:
+				 
+			
 				Tienda.porcentaje1 = Double.parseDouble(txtUnoacinco.getText());
-				break;
-				case 1:
-				Tienda.porcentaje2 = Double.parseDouble(txtSeisadiez.getText());
-				break;
-				case 2:
-				Tienda.porcentaje3 = Double.parseDouble(txtOnceaquince.getText());
-				break;
-				case 3:
-				Tienda.porcentaje4 = Double.parseDouble(txtMasdequince.getText());
-				break;
 				
+				
+				Tienda.porcentaje2 = Double.parseDouble(txtSeisadiez.getText());
+				
+				
+				Tienda.porcentaje3 = Double.parseDouble(txtOnceaquince.getText());
+				
+				
+				Tienda.porcentaje4 = Double.parseDouble(txtMasdequince.getText());
+				
+				dispose();
 			}
-			}
+			
 		});
 		btnAceptar.setBounds(319, 28, 89, 23);
 		getContentPane().add(btnAceptar);
+		
+		txtUnoacinco.setText(String.valueOf(Tienda.porcentaje1));
+		txtSeisadiez.setText(String.valueOf(Tienda.porcentaje2));
+		txtOnceaquince.setText(String.valueOf(Tienda.porcentaje3));
+		txtMasdequince.setText(String.valueOf(Tienda.porcentaje4));
 		
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.setBounds(319, 68, 89, 23);

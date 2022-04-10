@@ -178,6 +178,8 @@ public class Tienda extends JFrame {
 		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Configurar descuentos");
 		mntmNewMenuItem_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				ConfigurarDescuentos cd = new ConfigurarDescuentos();
+				dskPane.add(cd);
 			}
 		});
 		mntmNewMenuItem_4.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -186,8 +188,8 @@ public class Tienda extends JFrame {
 		JMenuItem mniConfigurarObsequios = new JMenuItem(" Configurar obsequios");
 		mniConfigurarObsequios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ConfigurarObsequios = new ConfigurarObsequios();
-				dskPane.add(mntmNewMenuItem_5)
+				ConfigurarObsequios co = new ConfigurarObsequios();
+				dskPane.add(co);
 			}
 		});
 		mniConfigurarObsequios.setFont(new Font("Tahoma", Font.PLAIN, 16));
