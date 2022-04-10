@@ -70,9 +70,11 @@ public class ConfigurarDescuentos extends JInternalFrame {
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int Codescuento;
+				int Unoacinco;
 				
-				switch (Codescuento) {
+				Unoacinco = Integer.parseInt(txtUnoacinco.getText());
+				
+				switch (Unoacinco) {
 				case 0:
 				Tienda.porcentaje1 = Double.parseDouble(txtUnoacinco.getText());
 				break;
