@@ -1,16 +1,37 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
 import javax.swing.JFrame;
-import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-public class ConfigurarCuotaDiaria extends JInternalFrame {
+public class ConfigurarCuotaDiaria extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtCuotaDiaria;
 
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ConfigurarCuotaDiaria frame = new ConfigurarCuotaDiaria();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
 	public ConfigurarCuotaDiaria() {
 		setTitle("Configurar Cuota Diaria");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -36,7 +57,6 @@ public class ConfigurarCuotaDiaria extends JInternalFrame {
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.setBounds(319, 53, 89, 23);
 		contentPane.add(btnCancelar);
-		setVisible(true);
 	}
 
 }
