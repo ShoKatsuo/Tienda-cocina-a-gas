@@ -2,6 +2,8 @@ import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ConfigurarDescuentos extends JInternalFrame {
 	private JTextField txtUnoacinco;
@@ -66,6 +68,27 @@ public class ConfigurarDescuentos extends JInternalFrame {
 		getContentPane().add(lblNewLabel_7);
 		
 		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int Codescuento;
+				
+				switch (Codescuento) {
+				case 0:
+				Tienda.porcentaje1 = Double.parseDouble(txtUnoacinco.getText());
+				break;
+				case 1:
+				Tienda.porcentaje2 = Double.parseDouble(txtSeisadiez.getText());
+				break;
+				case 2:
+				Tienda.porcentaje3 = Double.parseDouble(txtOnceaquince.getText());
+				break;
+				case 3:
+				Tienda.porcentaje4 = Double.parseDouble(txtMasdequince.getText());
+				break;
+				
+			}
+			}
+		});
 		btnAceptar.setBounds(319, 28, 89, 23);
 		getContentPane().add(btnAceptar);
 		

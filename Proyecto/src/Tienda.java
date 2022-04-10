@@ -170,6 +170,34 @@ public class Tienda extends JFrame {
 			}
 		});
 		mnVenta.add(mniGenerarReporte);
+		
+		JMenu mnNewMenu_2 = new JMenu("Configuraci\u00F3n");
+		mnNewMenu_2.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		menuBar.add(mnNewMenu_2);
+		
+		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Configurar descuentos");
+		mntmNewMenuItem_4.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		mnNewMenu_2.add(mntmNewMenuItem_4);
+		
+		JMenuItem mntmNewMenuItem_5 = new JMenuItem(" Configurar obsequios");
+		mntmNewMenuItem_5.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		mnNewMenu_2.add(mntmNewMenuItem_5);
+		
+		JMenuItem mntmNewMenuItem_6 = new JMenuItem(" Configurar cantidad \u00F3ptima");
+		mntmNewMenuItem_6.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		mnNewMenu_2.add(mntmNewMenuItem_6);
+		
+		JMenuItem mntmNewMenuItem_7 = new JMenuItem(" Configurar cuota diaria");
+		mntmNewMenuItem_7.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		mnNewMenu_2.add(mntmNewMenuItem_7);
+		
+		JMenu mnNewMenu_3 = new JMenu("Ayuda");
+		mnNewMenu_3.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		menuBar.add(mnNewMenu_3);
+		
+		JMenuItem mntmNewMenuItem_8 = new JMenuItem(" Acerca de Tienda");
+		mntmNewMenuItem_8.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		mnNewMenu_3.add(mntmNewMenuItem_8);
 				
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -180,5 +208,4 @@ public class Tienda extends JFrame {
 		setContentPane(contentPane);
 		setVisible(true);
 	}
-
 }
