@@ -198,8 +198,8 @@ public class Tienda extends JFrame {
 		JMenuItem mniConfigurarcantidadoptima = new JMenuItem(" Configurar cantidad \u00F3ptima");
 		mniConfigurarcantidadoptima.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Configurar cc = new Configurar ();
-				dskPane.add(cc);
+				CantidadOptima co = new CantidadOptima ();
+				dskPane.add(co);
 			}
 		});
 		mniConfigurarcantidadoptima.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -208,6 +208,8 @@ public class Tienda extends JFrame {
 		JMenuItem mniConfigurarcuotad = new JMenuItem(" Configurar cuota diaria");
 		mniConfigurarcuotad.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				ConfigurarCuotaDiaria cd = new ConfigurarCuotaDiaria ();
+				dskPane.add(cd);
 			}
 		});
 		mniConfigurarcuotad.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -220,6 +222,8 @@ public class Tienda extends JFrame {
 		JMenuItem mniAcercadetienda = new JMenuItem(" Acerca de Tienda");
 		mniAcercadetienda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				AcercaDe_Ventas av = new AcercaDe_Ventas();
+				dskPane.add(av);
 			}
 		});
 		mniAcercadetienda.setFont(new Font("Tahoma", Font.PLAIN, 16));
